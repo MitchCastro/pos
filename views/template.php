@@ -1,7 +1,9 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Inventory System</title>
@@ -21,6 +23,10 @@
   <link rel="stylesheet" href="views/dist/css/AdminLTE.css">
   <!-- AdminLTE Skins -->
   <link rel="stylesheet" href="views/dist/css/skins/_all-skins.min.css">
+  <!-- dataTable -->
+  <link rel="stylesheet" href="views/bower_components/datatables.net-bs/css/dataTables.bootstrap.css">
+  <!-- responsive style -->
+  <link rel="stylesheet" href="views/bower_components/Responsive/css/responsive.bootstrap4.min.css">
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -36,9 +42,14 @@
   <script src="views/bower_components/fastclick/lib/fastclick.js"></script>
   <!-- AdminLTE App -->
   <script src="views/dist/js/adminlte.min.js"></script>
+  <!-- datatables js -->
+  <script src="views/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="views/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <!-- responsive js -->
+  <script src="views/bower_components/Responsive/js/dataTables.responsive.js"></script>
 
 </head>
-<body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
+<body class="hold-transition skin-red sidebar-collapse sidebar-mini login-page">
   <?php if (isset($_SESSION['iniciarSesion']) && $_SESSION['iniciarSesion'] == 'ok') { ?>
     <!-- Site wrapper -->
     <div class="wrapper">
@@ -47,7 +58,7 @@
       <?php include 'modules/header.php' ?>
 
       <!-- Left side column. contains the sidebar -->
-      <?php include 'modules/menu.php' ?>
+      <?php include 'modules/main.php' ?>
 
       <!-- Content Wrapper. Contains page content -->
       <?php
@@ -59,10 +70,9 @@
               $_GET['ruta'] == 'customers' ||
               $_GET['ruta'] == 'sales' ||
               $_GET['ruta'] == 'sales-create' ||
-              $_GET['ruta'] == 'sales-report') {
-
+              $_GET['ruta'] == 'sales-report' ||
+              $_GET['ruta'] == 'logout') {
             include 'modules/'.$_GET['ruta'].'.php';
-
           } else {
             include 'modules/404.php';
           }
@@ -77,8 +87,8 @@
     <!-- ./wrapper -->
   <?php } else { ?>
 
-    <!-- Login. contains the login page. -->
-    <?php include 'modules/login.php' ?>
+  <!-- Login. contains the login page. -->
+  <?php include 'modules/login.php' ?>
 
   <?php } ?>
 <script src="views/js/template.js"></script>
