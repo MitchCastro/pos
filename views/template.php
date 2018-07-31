@@ -26,7 +26,7 @@
   <!-- dataTable -->
   <link rel="stylesheet" href="views/bower_components/datatables.net-bs/css/dataTables.bootstrap.css">
   <!-- responsive style -->
-  <link rel="stylesheet" href="views/bower_components/Responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="views/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -46,10 +46,13 @@
   <script src="views/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
   <script src="views/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
   <!-- responsive js -->
-  <script src="views/bower_components/Responsive/js/dataTables.responsive.js"></script>
+  <script src="views/bower_components/datatables.net-bs/js/dataTables.responsive.min.js"></script>
+  <script src="views/bower_components/datatables.net-bs/js/responsive.bootstrap.min.js"></script>
+  <!-- sweetalert2 -->
+  <script src="views/plugins/sweetalert2/sweetalert2.all.min.js"></script>
 
 </head>
-<body class="hold-transition skin-red sidebar-collapse sidebar-mini login-page">
+<body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
   <?php if (isset($_SESSION['iniciarSesion']) && $_SESSION['iniciarSesion'] == 'ok') { ?>
     <!-- Site wrapper -->
     <div class="wrapper">
@@ -72,7 +75,9 @@
               $_GET['ruta'] == 'sales-create' ||
               $_GET['ruta'] == 'sales-report' ||
               $_GET['ruta'] == 'logout') {
+
             include 'modules/'.$_GET['ruta'].'.php';
+
           } else {
             include 'modules/404.php';
           }
@@ -92,5 +97,6 @@
 
   <?php } ?>
 <script src="views/js/template.js"></script>
+<script src="views/js/users.js"></script>
 </body>
 </html>

@@ -25,15 +25,31 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <img src="views/img/users/default/anonymous.png" class="user-image" alt="User Image">
-                      <span class="hidden-xs">Alexander Pierce</span>
+                        <?php
+                        
+                        if ($_SESSION['avatar'] != '') {
+                            echo '<img src="'.$_SESSION['avatar'].'" class="user-image" alt="User Image">';
+                        } else {
+                            echo '<img src="views/img/users/default/anonymous.png" class="user-image" alt="User Image">';
+                        }
+
+                        ?>
+                        <span class="hidden-xs"><?= $_SESSION['name'] ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="views/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            <?php
+                        
+                            if ($_SESSION['avatar'] != '') {
+                                echo '<img src="'.$_SESSION['avatar'].'" class="img-circle" alt="User Image">';
+                            } else {
+                                echo '<img src="views/img/users/default/anonymous.png" class="img-circle" alt="User Image">';
+                            }
+
+                            ?>
                             <p>
-                                Alexander Pierce - Web Developer
+                                MITCH CASTRO - Web Developer
                                 <small>Member since Nov. 2012</small>
                             </p>
                         </li>
@@ -55,10 +71,10 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                <a href="#" class="btn btn-default btn-flat">PERFIL</a>
                             </div>
                             <div class="pull-right">
-                                <a href="logout" class="btn btn-default btn-flat">Salir</a>
+                                <a href="logout" class="btn btn-default btn-flat">SALIR</a>
                             </div>
                         </li>
                     </ul>

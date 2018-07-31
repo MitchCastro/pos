@@ -1,4 +1,4 @@
-	$(document).ready(function () {
+$(document).ready(function () {
     $('.sidebar-menu').tree()
 
     $('.dtable').DataTable({
@@ -28,6 +28,6 @@
             // jquery.dataables.js cambio de lenguage #11717
             "zeroRecords": "No se encontraron registros"
         },
-        responsive: true
+        // responsive: true
     });
 })
