@@ -170,10 +170,10 @@ $('.btnDeleteUser').click(function() {
         title: '¿Estas seguro de borrar el usuario?',
         type: 'warning',
         showCancelButton: true,
-        confirButtonColor: '#3085d6',
+        confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        calcelButtonText: 'Cancelar',
-        confirButtonText: 'Si, borrar Usuario!'
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Si, borrar Usuario!'
     }).then((result) => {
         if (result.value) {
             window.location = 'index.php?ruta=users&idUser='+idUser+'&fotoUser='+fotoUser+'&user='+user

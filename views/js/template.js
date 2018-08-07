@@ -14,10 +14,10 @@ $(document).ready(function () {
             "infoEmpty": "Ver 0 - 0 de 0 entradas",
             // jquery.dataTables.js cambio de lenguage #11579
             "lengthMenu": 'Mostrar <select>'+
-			            '<option value="2">2</option>'+
-			            '<option value="10">10</option>'+
-			            '<option value="20">20</option>'+
-			            '<option value="-1">Todo</option>'+
+                        '<option value="2">2</option>'+
+                        '<option value="10">10</option>'+
+                        '<option value="20">20</option>'+
+                        '<option value="-1">Todo</option>'+
                         '</select> entradas',
             // jquery.dataTables.js cambio de lenguage #11659
             "search": "Buscar:",
